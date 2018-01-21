@@ -1,0 +1,4 @@
+  color = blue
+
+print (color)
+
