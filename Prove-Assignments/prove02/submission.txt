@@ -1,0 +1,42 @@
+When your assignment is complete, please answer the questions in this text file and upload it to I-Learn.
+
+1. Please provide the URL of your public GitHub repository.
+https://github.com/B-Rydalch/machine-learning
+
+2. Briefly describe your overall approach to the task and highlight the most difficult part of this assignment.
+	I have not figured out why I can only achieve 34%. Out of Fear of not figuring it out and messing up 
+	the program even more. I am turning in what I have until I can figure out why I cannot get anything 
+	higher than a 37%. I believe it has to do with my distance formula, but again I'm not sure and am hoping 
+	to figure it out before the deadline. 
+
+
+3. Briefly describe your process for handling numeric data on different scales (i.e., normalizing).
+	It was not required for this weeks assignment. 
+
+
+4. Describe your results for the Iris data set. (For example, what level of accuracy did you see for different values of K?
+	The results with the Iris dataset seemed to stay around the the 37% area and as I increased the value of k, the program
+	did what it was suppose to do. Which was have the accuracy percentage decrease because the length of the distance increases. 
+
+
+5. How did your implementation compare to existing implementations?
+	My implementation was significantly worst compared to the sklearn classifier that was provided. As the k value was low with 
+	the sklearn algorithm, I received mid to high 90% accuracy. Where as with my classifier, I am not able to get higher than 40%. 
+
+6. Describe anything you did to go above and beyond the minimum standard requirements.
+	I did not add anything extra until I figure out why I cannot get a higher accuracy percentage. 
+
+
+7. Please select the category you feel best describes your assignment: D
+A - Some attempt was made
+B - Developing, but significantly deficient
+C - Slightly deficient, but still mostly adequate
+D - Meets requirements
+E - Shows creativity and excels above and beyond requirements
+
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+	I gave it my best to meet all requirements for this assignment. I am wanting to sit down with 
+	Brother Burton and work with him to discover why I cannot get a higher percentage. Assuming I will 
+	not have fixed the problem before the deadline. I would like to add matplotlib to the file to allow a
+	graphical understanding of what is taking place inside the program. 

@@ -1,0 +1,46 @@
+When your assignment is complete, please answer the questions in this text file and upload it to I-Learn.
+
+Name:Brad Rydalch
+
+1. Please provide the URL of your public GitHub repository.
+   https://github.com/B-Rydalch/machine-learning
+
+
+For questions 2-6, please type "True" or "False" in front of the question number.
+
+2. My experiment shell can correctly load the Iris dataset: 
+   TRUE
+
+3. My experiment shell randomizes the order of the instances (making sure to keep instances lined up with their appropriate targets) it and splits the data into a training set (70%) and a test set (30%)?
+   TRUE
+
+4. I have created a HardCoded classifier class with two methods: train and predict. The train method accepts training data (including targets). The predict method returns a prediction or classification for each instance it receives.
+   TRUE
+
+5. The Experiment Shell, processes the data, passes the training data to the classifier’s train method, the test data to the predict method, and then compares the predicted values against the correct answers, to produce an overall accuracy (on the test set).
+   TRUE
+
+6. I have run the HardCoded classifier on the Iris dataset and obtained a result.
+   TRUE
+
+7. What accuracy do you get when running the HardCoded classifier on the Iris dataset and why do you think that is?
+   32.4% accuracy
+
+
+
+
+
+8. Please select the category you feel best describes your assignment: 4
+1 - Some attempt was made
+2 - Developing, but signficantly deficient
+3 - Slightly deficient, but still mostly adequate
+4 - Meets requirements
+5 - Shows creativity and excels above and beyond requirements
+
+9. Provide a brief justification (1-2 sentences) for selecting that category: 
+   I was making an attempt to have the program accept csv files to begin training on, 
+   but I could not get it to work properly before the due date. So I took it off and 
+   just settled for the 93% area of  the assignment until I can get it to accept files
+   and not have code in the program that doesn't work. I will eventually create a user interface
+   that will allow the user to choose to use the data provided or upload a file and choose which
+   algorithm the user would like to use. 
