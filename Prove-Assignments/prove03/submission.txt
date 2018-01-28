@@ -1,30 +1,54 @@
 When your assignment is complete, please answer the questions in this text file and upload it to I-Learn.
 
 1. Please provide the URL of your public GitHub repository.
-
+	https://github.com/B-Rydalch/machine-learning/tree/master/Prove-Assignments/prove03
 
 2. What was the most difficult part of this assignment?
-
+	The most difficult part was overcoming the errors with the last data set. Mysefl and two other
+	students were not able to figure it out and asked to keep informed on it because everyone was 
+	so confused on what was actually wrong. 
 
 3. Briefly describe your process for handling non-numeric data.
+	The process was taking the data and forming into an object based on the data header names. 
+	By organizing the data into an object and replacing strings with numerical values. It allowed 
+	the change to be swift and dynamically flexible. 
 
 
 4. Briefly describe your process for missing data.
-
+	When it came to missing data. There were a couple of different ways to handle it. For example if 
+	the missing data consisted of a "?". it would then be replaced by a "NaN", 0, or -1 to show the data 
+	was not in the system. Based on what is going on with the data would determine which one was better 
+	because I wanted to be careful when it came to the possible risk of throwing off the accuracy. Other 
+	ways that I found were possible was to drop it from the equation. An example would be the last column
+	in the 3rd data set. It provided the names and models of the car. If they were missing, it's obvious they 
+	would not interfere with the accuracy output. Therefore during the calculation the column was dropped. 
 
 5. Describe your results for the Car Evaluation dataset.
-
+	The results I received from the training data and test data were very consistent with one anohter. 
+	It seemed to me the more I ran the algorithm the accuracy percentage would increase but only so slowly 
+	as k was adjusted. As far as an accuracy would occur I would jump around the 17-20 percent area. 
 
 6. Describe your results for the Pima Indian dataset.
-
+	The pima showed less percentage than the car evaluation. With my knn classifier I was able to retrieve 
+	15-17 percent accuracy. However, when I attempted to add the Knn classifier from sklearn. The program 
+	would crash due to a bug. for some reason the knn classifier does not work with something I am doing 
+	within my program to allow me to use the one from sklearn. 
 
 7. Describe your results for the Automobile MPG dataset.
-
+	The automobile results were the hardest one. I was never able to overcome the bug that I had spent 
+	so much time on by the due date. The error I was fighting said, "valueError: invalid literal for float()."
+	From there we believed it was because of the 'car name' column that consisted with all strings. But as 
+	we attempted to drop the column or use other methods to keep it out. Everything we attempted proved to be 
+	unsuccessfull. Any feed back so I can go back and fix it would be appreciated so I can understand what is 
+	going on. 
 
 8. Describe anything you did to go above and beyond the minimum standard requirements.
+	I provided a user interface to be able to view the different data sets, I had hoped to be able to choose 
+	between the sklearn knn algorithm and the one that I had developed. But because I couldn't over the error 
+	and everytime I introduced the sklearn knn algorithm the whole program would crash. 
 
 
-9. Please select the category you feel best describes your assignment:
+9. Please select the category you feel best describes your assignment:E
 A - Some attempt was made
 B - Developing, but significantly deficient
 C - Slightly deficient, but still mostly adequate
@@ -33,3 +57,6 @@ E - Shows creativity and excels above and beyond requirements
 
 
 10. Provide a brief justification (1-2 sentences) for selecting that category.
+	I would say shows creativity just because of the thoughts and designs I had for the user interface. 
+	The bugs and errors I was facing took longer than I had hoped so I was not able to import graphic designs
+	or apply matplotlib. 
