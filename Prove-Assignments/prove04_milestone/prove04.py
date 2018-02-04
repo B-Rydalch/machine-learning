@@ -179,7 +179,7 @@ def build_mpg_dataset():
 
 def build_credit_screen_dataset(data, classes, feature):
     headers = ["credit", "income", "collateral", "should_loan"]
-    dataset = read_csv('loan.csv', delimiter = ',', header = None, names = headers)
+    dataset = read_csv('Loan.xlsx', delimiter = ',', header = None, names = headers)
 
     train_data = dataset.as_matrix(headers[0:3])
     test_data = dataset.as_matrix(headers[3:4])
