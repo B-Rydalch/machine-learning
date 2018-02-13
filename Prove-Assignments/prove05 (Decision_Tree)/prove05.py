@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from knn import kNeighborsClassifier
-from decision_tree import decisionTreeClassifier
+from decision_tree import Decision_Tree_Classifier
 from sklearn import datasets
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
@@ -17,7 +17,7 @@ def main():
     1. UCI Car Evaluation \n \
     2. Pima Indian Diabetes \n \
     3. Automobile MPG \n \
-    4. Credit Screening")
+    4. Credit Screening with decision tree")
 
     user_input = int(input("> "))
 
@@ -33,34 +33,37 @@ def main():
         train_data, test_data = build_mpg_dataset()
         classifier = kNeighborsClassifier()
 
-    elif (user_inpu == 4):
-        train_data, test_data = build_credit_screen_dataset()
-        classifier = decisionTreeClassifier()
+    elif (user_input == 4):
+        train_data, test_data, headers = build_credit_screen_dataset()
+        classifier = Decision_Tree_Classifier()
         
 
 
     x = train_data
     y = test_data
-    kf = KFold(n_splits=4)
+    kf = KFold(n_splits=10)
     kf.get_n_splits(x,y)
     KFold(n_splits=4, random_state=None, shuffle=True)
     for train_index, test_index in kf.split(x, y):
-        #x_train = train_data, x_test = test_data
-        #y_train = train_targets, y_test = test_targets
-
         x_train, x_test = x[train_index], x[test_index]
         y_train, y_test = y[train_index], y[test_index]
 
-    #select the kNearest Neighbor
-    classifier = kNeighborsClassifier()
-    model = classifier.fit(x_train, y_train)
-    predictions = model.predict(x_test)
+    #reset the dataframe index numbers
+    x_train.reset_index(inplace=True, drop=True)
+    y_train.reset_index(inplace=True, drop=True)
+    x_test.reset_index(inplace=True, drop=True)
+    y_test.reset_index(inplace=True, drop=True)
+
+    model = classifier.fit(x_train, x_test, headers)
 
     #perform prediction to test data 
-    targets_predicted = model.predict(y_test)
+    targets_predicted = model.predict(y_train)
+    
+    #grabs the column from the data 
+    y_test = y_test[headers[-1]]
 
     count = 0 
-    for index in range(len(x_test)):
+    for index in range(len(y_test)):
         if targets_predicted[index] == test_data[index]:
             count += 1
 
@@ -177,7 +180,7 @@ def build_mpg_dataset():
 
 
 
-def build_credit_screen_dataset(data, classes, feature):
+def build_credit_screen_dataset():
     headers = ["credit", "income", "collateral", "should_loan"]
     dataset = read_csv('Loan.xlsx', delimiter = ',', header = None, names = headers)
 

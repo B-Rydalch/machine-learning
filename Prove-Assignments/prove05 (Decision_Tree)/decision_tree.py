@@ -1,35 +1,52 @@
-from sklearn.tree import DecisionTreeClassifier
-import numpy as np
-from binaryTree import Node
 import math
+import numpy as np
+import pandas as pd
+import entropy as enpy
+from binary_tree import Node
 
-class decisionTreeClassifier():
+
+class Decision_Tree_Classifier():
+
     def __init__(self):
         pass
 
-    def fit(self, data, targets):
-        return decisionTreeModel(data,targets)
+    def fit(self, data, targets, headers):
+        return Decision_Tree_Model(data, targets, headers)
 
-class decisionTreeModel():
-
-    def __init__(self,data, targets):
-        self.data = data
+class Decision_Tree_Model():
+    def __init__(self, data, targets, headers):
+        self.data= data
         self.targets = targets
-        self.tree = self.build_tree(data, targets)
+        self.headers = headers
+        frames = [data, targets]
+        train_data = pd.concat(frames, axis=1)
+        self.tree = enpy.build_tree(train_data, headers[:-1])
 
-    def predict(self, data, targets):
+    def __repr__(self):
+        enpy.print_tree(self.tree)
+
+    def predict(self, data):
         predictions = []
-        for item in data:
-            predictions.append(self.predicting(item))
+        enpy.print_tree(self.tree)
+        for index, row in data.iterrows():
+            attributes = self.headers[:]
+            prediction = self.predict_class(self.tree, row, attributes)
+            predictions.append(prediction)
         return predictions
 
-    def predicting(self, data):
-        return "predicting"
-
-    def build_tree(self, data, targets):
-        data_set = np.unique(data)
-
-        if len(data_set) == 1:
-            return Node()
-        else: Node()
+    def predict_class(self, node, row_data, headers):
+        for attribute in headers:
+            if attribute == node.name:
+                value = row_data[attribute]
+                if value in node.children:
+                    new_node = node.children[value]
+                    if new_node.isLeaf():
+                        return new_node.name
+                    else:
+                        headers.remove(attribute)
+                        return self.predict_class(new_node, row_data, headers)
+                else:
+                    most_common = enpy.most_common(self.targets)
+                    return most_common
+        return 1
 
