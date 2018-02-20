@@ -8,7 +8,7 @@ import random
 #######################################
 
 class Neuron: 
-    def __init__(self, num_weights, threshhold)
+    def __init__(self, num_weights, threshhold):
         self.num_weights = num_weights
         self.weights = []
         self.threshhold = threshhold
@@ -17,10 +17,10 @@ class Neuron:
         # make a changable float value as 
         # weight values will need to be changed
         for i in range(0,num_weights):
-            self.weights.append(random.random(-1.0, 1.0))
+            self.weights.append(random.uniform(-1.0, 1.0))
 
     def input(self, neuron_input): 
-        if (num_weights != len(neuron_input):
+        if (self.num_weights != neuron_input):
             print("ERROR! Number of weights do not match number of neuron inputs")
         else:
             # multiply values && consider threshhold
