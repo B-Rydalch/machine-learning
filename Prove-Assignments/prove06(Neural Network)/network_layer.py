@@ -13,14 +13,13 @@ class Network_Layer:
         self.neurons = []
         self.num_attributes = num_attributes + 1 # add 1 for bias
         self.threshhold = threshhold
+        
+        for i in range(0,self.num_neurons):
+            self.neurons.append(Neuron(self.num_attributes,self.threshhold))
 
-    def create_layer(num_neurons):
-        for i in range(0,num_neurons):
-            self.neurons.append(Neuron(self.num_attributes,threshhold))
-
-    def input_row(self, input):
+    def input_row(self, input_):
         results = []
-        data = list(inputs.copy())
+        data = list(input_.copy())
         for i in self.neurons:
             results.append(i.input(data))
         return results

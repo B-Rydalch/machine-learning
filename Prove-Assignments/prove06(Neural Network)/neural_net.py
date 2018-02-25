@@ -1,34 +1,36 @@
 import pandas as pd
+import numpy as np
 from neuron import Neuron
 from network_layer import Network_Layer
 from sklearn import datasets
-from pimaIndiansDiabetes import PIMA_INDIANS_DIABETES
 
 
 def main(): 
     
     print("Select which dataset to import. \n \
     1. Iris\n \
-    2. Pima Indian Diabetes)
+    2. Pima Indian Diabetes")
 
     user_input1 = int(input("> "))
 
     print("Enter thresshold value ")
     user_input2 = (input("> "))
    
-    thresh_hold = user_input2
+    threshhold = user_input2
 
-    if (user_input == 1):
+    
+
+    if (user_input1 == 1):
         Iris = datasets.load_iris()
         neural_net = Network_Layer(3,4,0)
 
-    elif (user_input == 2):
+    elif (user_input1 == 2):
         train_data, test_data = build_diabetes_dataset()
 
-    neuron1 = Neuron(2, thresh_hold)
+    neuron1 = Neuron(2,threshhold)
 
     print("testing neuron")
-    neuron1.input(1)
+    neuron1.input(2)
     print (neuron1)
 
 

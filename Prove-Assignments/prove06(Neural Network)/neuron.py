@@ -20,13 +20,16 @@ class Neuron:
             self.weights.append(random.uniform(-1.0, 1.0))
 
     def input(self, neuron_input): 
-        if (self.num_weights != neuron_input):
+        if (self.num_weights != len(neuron_input)):
             print("ERROR! Number of weights do not match number of neuron inputs")
         else:
             # multiply values && consider threshhold
-            synapse_value = 0
-            threshhold = 0
+            synapse_value = 0.0
             for i in range (0, self.num_weights):
+                print("weights: ")
+                print(self.weights[i])
+                print("neuron-Input: ")
+                print(neuron_input[i])
                 synapse_value = self.weights[i] * neuron_input[i]
             if (synapse_value >= self.threshhold):
                 return 1
