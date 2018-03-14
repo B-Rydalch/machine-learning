@@ -39,6 +39,7 @@ class Target_Node:
 
     # trains to have correct weights
     def train(self, data_row):
+        print("CALLED train")
         self.value = 0
         
         # gets the sum of the weights times the data input
@@ -80,7 +81,8 @@ class Neurons:
 
     # teaches the neuron array when to fire when given data
     def teach(self, data):
-       
+        print("CALLED teach")
+
         # this will run when either all the weights are correct or after 1000 runs
         done = False
         runs = 0
@@ -172,6 +174,8 @@ class Neurons:
     # recalculate 
     def recalculate_node_values(self, wrongly_predicted_target, correct_target, data):
         self.recalculate_deltas(wrongly_predicted_target, correct_target)
+
+        print("CALLED recalculate node")
         
         if self.num_hidden_layers > 0:
             
@@ -227,6 +231,8 @@ class Neurons:
 
     # recalculates the required deltas for the nodes
     def recalculate_deltas(self, wrongly_predicted_target, correct_target):
+
+        print("CALLED RECALCULATE DELTAS")
         
         # loop through each target node and recalculate if needed
         for target_node in self.neural_network[-1]:
@@ -271,6 +277,7 @@ class Neurons:
 
     # gets the accuracy of the current iteration
     def get_accuracy(self, data):
+        print("CALLED get accuracy")
         num_predicted_correctly = 0
         for index, data_row in enumerate(data):
             if self.predict(data_row) == self.targets[index]:
@@ -280,7 +287,7 @@ class Neurons:
 
     # predicts the target for a particular row of data
     def predict(self, data_row):
-        
+        print("CALLED predict")
         if self.num_hidden_layers > 0:
             
             # 2D array to keep track of nodes values at each layer
